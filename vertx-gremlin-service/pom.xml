@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.monogram.metagraph</groupId>
-		<artifactId>vertx-gremlin</artifactId>
-		<version>3.2.1</version>
-	</parent>
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.monogram.metagraph</groupId>
+        <artifactId>vertx-gremlin</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-	<artifactId>vertx-gremlin-service</artifactId>
+    <artifactId>vertx-gremlin-service</artifactId>
 
 
-	<dependencies>
-		<dependency>
-			<groupId>com.monogram.metagraph</groupId>
-			<artifactId>vertx-gremlin-client</artifactId>
-			<version>3.2.1</version>
-		</dependency>
-		<dependency>
-			<groupId>io.vertx</groupId>
-			<artifactId>vertx-service-factory</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.vertx</groupId>
-			<artifactId>vertx-service-proxy</artifactId>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>com.monogram.metagraph</groupId>
+            <artifactId>vertx-gremlin-client</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-service-factory</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-service-proxy</artifactId>
+        </dependency>
+    </dependencies>
 
- <properties>
+    <properties>
         <cassandra.version>2.1.9</cassandra.version>
         <tinkerpop.version>3.1.1-incubating</tinkerpop.version>
         <titan.version>1.1.0-SNAPSHOT</titan.version>
@@ -76,87 +76,87 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <titan.testdir>${project.build.directory}/titan-test</titan.testdir>
         <gpg.skip>false</gpg.skip>
-        <perf.jvm.opts />
+        <perf.jvm.opts/>
         <default.test.jvm.opts>-Xms256m -Xmx768m -XX:+HeapDumpOnOutOfMemoryError -ea ${test.extra.jvm.opts}</default.test.jvm.opts>
         <mem.jvm.opts>-Xms256m -Xmx256m -ea -XX:+HeapDumpOnOutOfMemoryError ${test.extra.jvm.opts}</mem.jvm.opts>
-        <test.extra.jvm.opts />
+        <test.extra.jvm.opts/>
         <test.skip.default>false</test.skip.default>
         <test.skip.tp>true</test.skip.tp>
         <top.level.basedir>${basedir}</top.level.basedir>
         <compiler.source>1.8</compiler.source>
         <compiler.target>1.8</compiler.target>
-        <compiler.args />
+        <compiler.args/>
         <vertx.version>3.2.1</vertx.version>
     </properties>
 
-	<build>
-		<directory>${project.basedir}/target</directory>
-		<plugins>
-			<plugin>
-				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>1.3.1</version>
-				<executions>
-					<execution>
-						<id>enforce-dependency-convergence</id>
-						<goals>
-							<goal>enforce</goal>
-						</goals>
-						<configuration>
-							<rules>
-								<DependencyConvergence />
-							</rules>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>${compiler.source}</source>
-					<target>${compiler.target}</target>
-					<compilerArgument>${compiler.args}</compilerArgument>
-					<compilerArguments>
-						<Xmaxerrs>500</Xmaxerrs>
-					</compilerArguments>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.5</version>
-			</plugin>
-			<plugin>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.8</version>
-				<executions>
-					<execution>
-						<id>copy-dependencies</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/lib</outputDirectory>
-							<overWriteReleases>false</overWriteReleases>
-							<overWriteSnapshots>false</overWriteSnapshots>
-							<overWriteIfNewer>true</overWriteIfNewer>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.5</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.5</version>
-				<configuration>
-					<skipTests>true</skipTests>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <directory>${project.basedir}/target</directory>
+        <plugins>
+            <plugin>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>1.3.1</version>
+                <executions>
+                    <execution>
+                        <id>enforce-dependency-convergence</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <DependencyConvergence/>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${compiler.source}</source>
+                    <target>${compiler.target}</target>
+                    <compilerArgument>${compiler.args}</compilerArgument>
+                    <compilerArguments>
+                        <Xmaxerrs>500</Xmaxerrs>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.8</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>false</overWriteSnapshots>
+                            <overWriteIfNewer>true</overWriteIfNewer>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
