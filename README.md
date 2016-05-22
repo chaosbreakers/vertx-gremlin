@@ -50,10 +50,10 @@ VertxGremlinClient client = VertxGremlinClient.create(vertx, config, ip, host)
 {
   "graphId": "grapid-22554353",
   "gremlinScript": "g.V().property('country',aaa).property('addr',bbb).valueMap()",
-  "parambindings":[
+  "parambindings":{
       "aaa":"aaaValue",
       "bbb":"bbbValue"
-  ]
+  }
 }
 ```
 如上所示的数据中，vertx-gremlin-server会将这些参数处理后，`gremlinScript`在被执行时的值会编程`g.V().property('country',"aaaValue").property('addr',"aaaValue").valueMap()`。注意这里的参数名`aaa`,`bbb`，要取名特别一点，最好不要取名为`gremlinScript`中出现的字符串。
