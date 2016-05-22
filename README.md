@@ -50,7 +50,7 @@ VertxGremlinClient client = VertxGremlinClient.create(vertx, config, ip, host)
 {
   "graphId": "grapid-22554353",
   "gremlinScript": "g.V().property('country',aaa).property('addr',bbb).valueMap()",
-  "parambindings"[
+  "parambindings":[
       "aaa":"aaaValue",
       "bbb":"bbbValue"
   ]
