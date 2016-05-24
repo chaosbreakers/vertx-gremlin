@@ -2,8 +2,6 @@ package com.monogram.metagraph.vertx.gremlin.client;
 
 import static java.util.Objects.requireNonNull;
 
-import org.apache.avro.io.JsonEncoder;
-
 import java.util.Objects;
 
 import io.vertx.core.Handler;
@@ -13,6 +11,7 @@ import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
+import io.vertx.core.net.NetClient;
 import io.vertx.core.net.NetSocket;
 
 /**
@@ -47,30 +46,32 @@ public class GremlinClientImp implements GremlinClient {
     }
 
     @Override
-    public GremlinClient execute(String json,Handler<Buffer> handler) {
-        vertx.createNetClient().connect(port, host, res -> {
-            if(res.succeeded()){
+    public GremlinClient execute(String json, Handler<Buffer> handler) {
+        NetClient netClient = vertx.createNetClient();
+        netClient.connect(port, host, res -> {
+            if (res.succeeded()) {
                 NetSocket socket = res.result();
-                socket.write(json);
-                socket.handler(handler);
-                socket.close();
+                socket.write(json).handler(handler);
             }
-            System.out.println("hello");
+        });
+        return this;
+    }
+
+
+    @Override
+    public GremlinClient execute(GremlinScriptMessage message, Handler<Buffer> handler) {
+        vertx.createNetClient().connect(port, host, res -> {
+            if (res.succeeded()) {
+                NetSocket socket = res.result();
+                socket.write(Json.encode(message));
+                socket.handler(handler);
+            }
         });
         return this;
     }
 
     @Override
-    public GremlinClient execute(GremlinScriptMessage message,Handler<Buffer> handler) {
-        vertx.createNetClient().connect(port, host, res -> {
-            if(res.succeeded()){
-                NetSocket socket = res.result();
-                socket.write(Json.encode(message));
-                socket.handler(handler);
-                socket.close();
-            }
-            System.out.println("hello");
-        });
-        return this;
+    public void close() {
+
     }
 }

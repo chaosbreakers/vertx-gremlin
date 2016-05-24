@@ -24,8 +24,6 @@ public interface GremlinClient {
 
     GremlinClient execute(GremlinScriptMessage message,Handler<Buffer> handler);
 
-    static void close(){
-    }
-
+    void close();
 
 }
