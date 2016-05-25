@@ -1,4 +1,6 @@
 # vertx-gremlin
+
+[![Join the chat at https://gitter.im/openmg/vertx-gremlin](https://badges.gitter.im/openmg/vertx-gremlin.svg)](https://gitter.im/openmg/vertx-gremlin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 > Gremlin server becomes Gremlin verticle
 
 `Gremlin Server` 提供了一种在单图或多图的图实例中执行远程gremlin脚本的方式。更多了解Gremlin Server的相关内容请参考 [tinkerpop-gremlin server][1]
