@@ -4,7 +4,7 @@
 
 	<groupId>com.monogram.metagraph</groupId>
 	<artifactId>vertx-gremlin</artifactId>
-	<version>3.2.1</version>
+	<version>3.2.1.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>vertx gremlin: client for gremlin server</name>
@@ -12,7 +12,7 @@
 
 	<modules>
 		<module>vertx-gremlin-client</module>
-		<!-- <module>vertx-gremlin-server</module> -->
+		 <module>vertx-gremlin-server</module>
 	</modules>
 
 </project>
