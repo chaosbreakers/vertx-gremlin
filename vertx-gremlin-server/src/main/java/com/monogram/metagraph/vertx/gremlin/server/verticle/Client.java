@@ -12,9 +12,6 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
-import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Future;
-
 /**
  *
  * Created by zhaoliang(weston_contribute@163.com) on 2016/5/27.

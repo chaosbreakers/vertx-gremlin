@@ -2,7 +2,6 @@ package com.monogram.metagraph.vertx.gremlin.server.verticle;
 
 import com.monogram.metagraph.vertx.gremlin.server.model.GremlinMessage;
 
-import org.omg.CORBA.Object;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,9 +11,7 @@ import io.netty.util.internal.logging.InternalLoggerFactory;
 import io.netty.util.internal.logging.Slf4JLoggerFactory;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
-import io.vertx.core.Handler;
 import io.vertx.core.eventbus.EventBus;
-import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonObject;
 
