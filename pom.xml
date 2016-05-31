@@ -1,19 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.monogram.metagraph</groupId>
-	<artifactId>vertx-gremlin</artifactId>
-	<version>3.2.1.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+    <groupId>com.monogram.metagraph</groupId>
+    <artifactId>vertx-gremlin</artifactId>
+    <version>3.2.1.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-	<name>vertx gremlin: client for gremlin server</name>
-	<url>https://github.com/openmg/vertx-gremlin</url>
+    <name>vertx gremlin: client for gremlin server</name>
+    <url>https://github.com/openmg/vertx-gremlin</url>
 
-	<modules>
-		<module>vertx-gremlin-client</module>
-		 <module>vertx-gremlin-server</module>
-	</modules>
+    <modules>
+        <module>vertx-gremlin-client</module>
+        <module>vertx-gremlin-server</module>
+    </modules>
 
     <properties>
         <cassandra.version>2.1.9</cassandra.version>
@@ -76,8 +76,6 @@
         <vertx.version>3.2.1</vertx.version>
     </properties>
 
-    <name>vertx gremlin</name>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -109,14 +107,9 @@
         </dependency>
         <dependency>
             <groupId>io.vertx</groupId>
-            <artifactId>vertx-hazelcast</artifactId>
+            <artifactId>vertx-mongo-client</artifactId>
             <version>${vertx.version}</version>
         </dependency>
-            <dependency>
-                <groupId>io.vertx</groupId>
-                <artifactId>vertx-mongo-client</artifactId>
-                <version>${vertx.version}</version>
-            </dependency>
         <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-dropwizard-metrics</artifactId>
