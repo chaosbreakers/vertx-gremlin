@@ -1,0 +1,4 @@
+{
+  "eventBusAddress": "outMessage",
+  "gremlinServerConfigPath": "gremlinServerConfigPath"
+}
