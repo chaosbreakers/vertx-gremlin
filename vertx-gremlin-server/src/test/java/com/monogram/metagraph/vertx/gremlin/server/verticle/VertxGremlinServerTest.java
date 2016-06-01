@@ -21,7 +21,8 @@ public class VertxGremlinServerTest {
     @Test
     public void name() throws Exception {
         JsonObject config = new JsonObject()
-            .put("gremlinServerConfigPath", "D:\\tg-metagraph-reposities\\vertx-gremlin\\vertx-gremlin-server\\src\\test\\resources\\gremlin-server.yaml")
+            .put("gremlinServerConfigPath", "gremlin-server.yaml")
+//            .put("gremlinServerConfigPath", "D:\\tg-metagraph-reposities\\vertx-gremlin\\vertx-gremlin-server\\src\\test\\resources\\gremlin-server.yaml")
             .put("eventBusAddress", "outMessage");
         DeploymentOptions options = new DeploymentOptions().setConfig(config);
         VertxOptions vertxOptions = new VertxOptions().setClustered(true);
