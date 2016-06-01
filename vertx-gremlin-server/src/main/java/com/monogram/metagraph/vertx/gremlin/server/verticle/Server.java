@@ -34,7 +34,7 @@ public enum Server {
         if(gremlinServer != null){
             return this;
         }
-        if (StringUtils.isNotEmpty(configFilePath)) {
+        if (StringUtils.isEmpty(configFilePath)) {
             logger.error("start server failed, the config file path is empty.");
         }
 
