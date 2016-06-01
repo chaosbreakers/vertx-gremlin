@@ -55,7 +55,6 @@ public class VertxGremlinServer extends AbstractVerticle {
             try {
                 submit = client.submit(gremlinMessage.getGremlinScript(), null, gremlinMessage.getParambindings());
                 String result = Json.encode(submit);
-                System.out.println("submit:" + result);
                 event.reply(result);
             } catch (Exception e) {
                 logger.error("can't execute script : " + gremlinMessage.getGremlinScript() + " because: " + e.getMessage(), e);
